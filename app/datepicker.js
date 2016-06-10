@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['@angular/core', 'moment'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, moment_1;
     var DatePickerComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (moment_1_1) {
+                moment_1 = moment_1_1;
             }],
         execute: function() {
             DatePickerComponent = (function () {
@@ -37,9 +40,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.nextYear = (parseInt(this.currYear) + 1).toString();
                     //Set Date Array
                     if (this.value != '') {
-                        var givenDate = moment(this.value, "MM/DD/YYYY", true);
+                        var givenDate = moment_1.default(this.value);
                         this.currMonth = this.months[givenDate.month()].toString();
-                        this.currYear = givenDate.year();
+                        this.currYear = givenDate.year().toString();
                         this.dates = this.setDateArray(this.currMonth, this.currYear, givenDate.date());
                     }
                     else {
@@ -96,9 +99,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     var tempLastDate = this.decideDate(month, year);
                     var temp = [];
                     for (var i = 1; i <= tempLastDate; i++) {
-                        var currentDate = moment().year(year).month(month).date(i);
-                        var pastDate = moment(this.minDate);
-                        var futureDate = moment(this.maxDate).add(1, 'd');
+                        var currentDate = moment_1.default().year(year).month(month).date(i);
+                        var pastDate = moment_1.default(this.minDate);
+                        var futureDate = moment_1.default(this.maxDate).add(1, 'd');
                         var dbld = false;
                         //To disable Days - Index based 0-6
                         for (var dayIndex = 0; dayIndex < this.disableDays.length; dayIndex++) {
@@ -180,7 +183,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         case 'Sep':
                         case 'Nov':
                             {
-                                //April, June, September, November 
+                                //April, June, September, November
                                 last = 30;
                             }
                             break;
@@ -193,7 +196,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         if (sDate.date != '') {
                             //Set the new date array with active date
                             this.dates = this.setDateArray(this.currMonth, this.currYear, sDate.date);
-                            var selDate = moment().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY', true);
+                            var selDate = moment_1.default().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY', true);
                             this.selectedDate.next(selDate);
                         }
                     }

@@ -1,5 +1,5 @@
-import {Component,OnChanges,Input,EventEmitter} from 'angular2/core';
-declare var moment:any;
+import {Component,OnChanges,Input,EventEmitter} from '@angular/core';
+import moment from 'moment';
 
 @Component({
     selector: 'date-picker',
@@ -16,7 +16,7 @@ export class DatePickerComponent implements OnChanges{
     @Input() toContainPrevMonth:boolean;
     @Input() toContainNextMonth:boolean;
     @Input() value:string='';
-	
+
 	private daysofWeek:Array<String>;
 	private currMonth:string;
 	private currYear:string;
@@ -30,10 +30,10 @@ export class DatePickerComponent implements OnChanges{
 	private nextYear:string;
 	private showDp = 'none';
 	public selectedDate = new EventEmitter();
-		
-	
+
+
 	ngOnChanges() {
-        this.daysofWeek = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+    this.daysofWeek = ['Su','Mo','Tu','We','Th','Fr','Sa'];
 		this.months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 		this.currMonth = this.months[new Date().getMonth()].toString();
 		this.currYear = new Date().getFullYear().toString();
@@ -44,22 +44,22 @@ export class DatePickerComponent implements OnChanges{
 		this.nextYear = (parseInt(this.currYear) + 1).toString();
 		//Set Date Array
         if (this.value!='') {
-            let givenDate = moment(this.value,"MM/DD/YYYY",true);
+            let givenDate = moment(this.value);
             this.currMonth = this.months[givenDate.month()].toString();
-            this.currYear = givenDate.year();
-            this.dates = this.setDateArray(this.currMonth,this.currYear,givenDate.date());    
+            this.currYear = givenDate.year().toString();
+            this.dates = this.setDateArray(this.currMonth,this.currYear,givenDate.date());
         }
         else {
             this.dates = this.setDateArray(this.currMonth,this.currYear,'');
         }
-				
+
 	}
 
 	openDatePicker() {
 		if (this.showDp=='none')
 			this.showDp = 'block';
 		else
-			this.showDp = 'none';	
+			this.showDp = 'none';
 	}
 
 	setPrevMonth() {
@@ -78,7 +78,7 @@ export class DatePickerComponent implements OnChanges{
 			this.currYear = this.prevYear;
 			this.prevYear = (parseInt(this.currYear) - 1).toString();
 			this.nextYear = (parseInt(this.currYear) + 1).toString();
-		}	
+		}
 		//Set Date Array to previous month
 		this.dates = this.setDateArray(this.currMonth,this.currYear,'');
 	}
@@ -99,13 +99,13 @@ export class DatePickerComponent implements OnChanges{
 			this.currYear = this.nextYear;
 			this.prevYear = (parseInt(this.currYear) - 1).toString();
 			this.nextYear = (parseInt(this.currYear) + 1).toString();
-		}	
+		}
 		//Set Date Array to next month
 		this.dates = this.setDateArray(this.currMonth,this.currYear,'');
 	}
 
 	setDateArray(month,year,date):any{
-		
+
 		let tempLastDate = this.decideDate(month,year);
 		let temp = [];
 		for (let i=1;i<=tempLastDate;i++){
@@ -123,16 +123,16 @@ export class DatePickerComponent implements OnChanges{
                 dbld = true;
             }
 			if (i!=date)
-				temp.push({'month':this.months.indexOf(month)+1,'date':i,'disabled':dbld,'selected':false,'empty':false});	
+				temp.push({'month':this.months.indexOf(month)+1,'date':i,'disabled':dbld,'selected':false,'empty':false});
 			else
-				temp.push({'month':this.months.indexOf(month)+1,'date':i,'disabled':dbld,'selected':true,'empty':false});	
+				temp.push({'month':this.months.indexOf(month)+1,'date':i,'disabled':dbld,'selected':true,'empty':false});
 		}
-		this.completeDates = temp;	
+		this.completeDates = temp;
 
 		//Determine Date of First of the Month
 		let firstDate = new Date(month+'/'+'1'+'/'+year);
 		let lastDate = new Date(month+'/'+tempLastDate+'/'+year);
-		
+
 		//Prepend Prev Month Dates
 		let spaceArray=[];
 		if (firstDate.getDay()!=0){
@@ -166,7 +166,7 @@ export class DatePickerComponent implements OnChanges{
 				nIndex++;
 			}
 		}
-		
+
 		let tempDateChild=[];
 		let tempDateMain=[];
 		for (let date in this.tempArray){
@@ -191,15 +191,15 @@ export class DatePickerComponent implements OnChanges{
 				last = 28;
 				if ((parseInt(year)%4) == 0)
 					last = last + 1;
-			} 
+			}
 			break;
-			case 'Apr' : 
+			case 'Apr' :
 			case 'Jun' :
 			case 'Sep' :
 			case 'Nov' :{
-				//April, June, September, November 
+				//April, June, September, November
 				last = 30;
-			} 
+			}
 			break;
 			default : break;
 		}
