@@ -1,4 +1,4 @@
-System.register(['angular2/core', './datepicker'], function(exports_1, context_1) {
+System.register(['@angular/core', './datepicker'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -40,7 +40,7 @@ System.register(['angular2/core', './datepicker'], function(exports_1, context_1
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    \t<h3>Angular 2 DatePicker</h3>\n    \t<input #dateText type='text' value={{selDate}} (change)=\"setInputDate($event)\"/>\n    \t<date-picker \n            [value]=\"value\"\n            [minDate]=\"minDate\" \n            [maxDate]=\"maxDate\"\n            [disableDays]=\"disableDays\"\n            [toContainPrevMonth]=\"toContainPrevMonth\"\n            [toContainNextMonth]=\"toContainNextMonth\"\n            (selectedDate)='setDate($event)'></date-picker>\n    ",
+                        template: "\n    \t<h3>Angular 2 DatePicker</h3>\n    \t<input #dateText type='text' value={{selDate}} (change)=\"setInputDate($event)\"/>\n    \t<date-picker\n            [value]=\"value\"\n            [minDate]=\"minDate\"\n            [maxDate]=\"maxDate\"\n            [disableDays]=\"disableDays\"\n            [toContainPrevMonth]=\"toContainPrevMonth\"\n            [toContainNextMonth]=\"toContainNextMonth\"\n            (selectedDate)='setDate($event)'></date-picker>\n    ",
                         directives: [datepicker_1.DatePickerComponent]
                     }), 
                     __metadata('design:paramtypes', [])

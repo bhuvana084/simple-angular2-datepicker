@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {DatePickerComponent} from './datepicker'
 
 @Component({
@@ -6,9 +6,9 @@ import {DatePickerComponent} from './datepicker'
     template: `
     	<h3>Angular 2 DatePicker</h3>
     	<input #dateText type='text' value={{selDate}} (change)="setInputDate($event)"/>
-    	<date-picker 
+    	<date-picker
             [value]="value"
-            [minDate]="minDate" 
+            [minDate]="minDate"
             [maxDate]="maxDate"
             [disableDays]="disableDays"
             [toContainPrevMonth]="toContainPrevMonth"
@@ -26,7 +26,7 @@ export class AppComponent {
     private toContainPrevMonth:boolean = false;
     private toContainNextMonth:boolean = false;
     private value:string='';
-	
+
     setInputDate(event) {
         this.value = event.target.value;
     }

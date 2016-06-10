@@ -1,4 +1,4 @@
-import {Component,OnChanges,Input,EventEmitter} from 'angular2/core';
+import {Component,OnChanges,Input,EventEmitter} from '@angular/core';
 declare var moment:any;
 
 @Component({

@@ -7,13 +7,13 @@
     </caption>
     <thead>
         <tr>
-            <th *ngFor="#day of daysofWeek">{{day}}</th>
+            <th *ngFor="let day of daysofWeek">{{day}}</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="#date of dates">
-            <td *ngFor="#d of date" (click)='setDate(d)' 
-                [class.disabled]='d.disabled' 
+        <tr *ngFor="let date of dates">
+            <td *ngFor="let d of date" (click)='setDate(d)' 
+                [class.disabled]='d.disabled'
                 [class.selDate]='d.selected'
                 [class.empty]='d.empty'>{{d.date}}</td>
         </tr>
