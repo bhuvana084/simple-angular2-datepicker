@@ -23,6 +23,10 @@
     z-index: -99;
 }
 
+#wp-calendar caption label {
+  width: 70%;
+}
+
 #wp-calendar thead th {
     font-size: 10px;
     padding: 5px 0;
@@ -56,7 +60,7 @@
     border-color: #fff #bbbbbb #bbbbbb #fff;
     background: #555555;
     background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#555555));
-    background: -moz-linear-gradient(top,  #555555,  #555555);    
+    background: -moz-linear-gradient(top,  #555555,  #555555);
 }
 
 #wp-calendar tbody td.pad {
