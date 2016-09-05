@@ -1,0 +1,13 @@
+<h1>
+  {{title}}
+</h1>
+
+<input #dateText type='text' value={{selDate}} (change)="setInputDate($event)"/>
+<date-picker
+    [value]="value"
+    [minDate]="minDate" 
+    [maxDate]="maxDate"
+    [disableDays]="disableDays"
+    [toContainPrevMonth]="toContainPrevMonth"
+    [toContainNextMonth]="toContainNextMonth"
+    (selectedDate)='setDate($event)'></date-picker>
