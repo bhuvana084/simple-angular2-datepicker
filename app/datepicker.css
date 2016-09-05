@@ -1,0 +1,124 @@
+#wp-calendar {
+    color: #666;
+    font-size: 12px;
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    font-family: 'Open Sans';
+}
+
+#wp-calendar a {    color: #467b89 }
+
+#wp-calendar caption {
+    background: #555555;
+    color: white;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 #000;
+    -webkit-box-shadow: inset 0 1px 0 #484848, 0 -1px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 1px 0 #484848, 0 -1px 5px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 0 #484848, 0 -1px 5px rgba(0,0,0,0.3);
+    border: 1px solid #555555;
+    z-index: -99;
+}
+
+#wp-calendar thead th {
+    font-size: 10px;
+    padding: 5px 0;
+    color: white;
+    border-bottom: 1px solid #bbbbbb;
+    background: #f96302;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f96302), to(#f96302));
+    background: -moz-linear-gradient(top,  #f96302,  #f96302);
+    text-align: center;
+}
+
+#wp-calendar tbody td {
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid;
+    border-color: #fff #bbbbbb #bbbbbb #fff;
+    background: white;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+    background: -moz-linear-gradient(top,  white,  white);
+}
+#wp-calendar tbody td:hover {
+    color: white;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid;
+    border-color: #fff #bbbbbb #bbbbbb #fff;
+    background: #555555;
+    background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#555555));
+    background: -moz-linear-gradient(top,  #555555,  #555555);    
+}
+
+#wp-calendar tbody td.pad {
+    background: #f5f5f5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#ececec));
+    background: -moz-linear-gradient(top,  #f5f5f5,  #ececec);
+}
+
+#wp-calendar tfoot {
+    color: #e0e0e0;
+    font-size: 12px;
+    text-align: center;
+}
+
+#wp-calendar tfoot tr {
+    background: #f5f5f5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#ececec));
+    background: -moz-linear-gradient(top,  #f5f5f5,  #ececec);
+}
+
+#wp-calendar tfoot td {    padding: 10px 10px }
+
+#wp-calendar tfoot a {
+    color: #666;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#wp-calendar tfoot td#prev {    text-align: left }
+
+#wp-calendar tfoot td#next {    text-align: right }
+
+#wp-calendar #today {
+    color: #fff;
+    border: 1px solid #467b89;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    background: #6eafbf;
+    background: -moz-radial-gradient(50% 50% 0deg,ellipse cover, #6eafbf, #569EB1);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 20, from(#6eafbf), to(#569EB1));
+}
+
+.display {
+    display: block;
+}
+
+#wp-calendar tbody td.disabled {
+    cursor: auto;
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#dedede));
+    background: -moz-linear-gradient(top,  #ededed,  #dedede);
+}
+#wp-calendar tbody td.disabled:hover {
+    color:#666;
+}
+#wp-calendar tbody td.empty {
+    cursor: auto;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+    background: -moz-linear-gradient(top,  #fff,  #fff);
+}
+#wp-calendar tbody td.selDate {
+    color: white;
+    background: #f96302;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f96302), to(#f96302));
+    background: -moz-linear-gradient(top,  #f96302,  #f96302);
+}

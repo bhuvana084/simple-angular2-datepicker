@@ -1,0 +1,21 @@
+<i class="fa fa-calendar fa-lg" (click)='openDatePicker()'></i>
+<table id="wp-calendar" [style.display]="showDp">
+    <caption>
+        <i class='fa fa-arrow-circle-left' style='float:left' (click)='setPrevMonth()'></i>
+        <label>{{currMonth}} {{currYear}}</label>
+        <i class='fa fa-arrow-circle-right' style='float:right' (click)='setNextMonth(this)'></i>
+    </caption>
+    <thead>
+        <tr>
+            <th *ngFor="#day of daysofWeek">{{day}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="#date of dates">
+            <td *ngFor="#d of date" (click)='setDate(d)' 
+                [class.disabled]='d.disabled' 
+                [class.selDate]='d.selected'
+                [class.empty]='d.empty'>{{d.date}}</td>
+        </tr>
+    </tbody>
+</table>
